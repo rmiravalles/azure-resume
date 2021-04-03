@@ -38,6 +38,7 @@ For the website, I used [this free template](https://startbootstrap.com/theme/re
 
 ### Enable HTTPS and custom domain
 
+- Quickstart: [Create an Azure CDN profile and endpoint](https://docs.microsoft.com/en-us/azure/cdn/cdn-create-new-endpoint)
 - Tutorial: [Map a custom domain with HTTPS enabled](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-custom-domain-name?tabs=azure-portal#map-a-custom-domain-with-https-enabled)
 
 ### Set up GitHub Action

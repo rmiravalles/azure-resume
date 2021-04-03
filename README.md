@@ -17,7 +17,7 @@ There are 7 steps to this challenge:
 - [ ] Add a visitor count to the website.
 - [x] Deploy the website to Azure Blob Storage.
 - [x] Enable HTTPS and custom domain support.
-- [ ] Set up GitHub Actions.
+- [x] Set up GitHub Actions.
 - [ ] Write a blog post.
 
 ## My Progress
@@ -33,8 +33,6 @@ For the website, I used [this free template](https://startbootstrap.com/theme/re
 ### Storage Account
 
 - Tutorial: [Host a static website on Blob Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-host)
-- From the Azure Portal, I created a new storage account.
-- In the newly created storage account, under Settings, I clicked on the **Static website** option.
 
 ### Enable HTTPS and custom domain
 
@@ -43,4 +41,10 @@ For the website, I used [this free template](https://startbootstrap.com/theme/re
 
 ### Set up GitHub Action
 
-- [Use GitHub Actions to deploy your static website to Azure storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-github-actions)
+- Tutorial: [Use GitHub Actions to deploy your static website to Azure storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-github-actions)
+- I encountered an issue with the **Purge CDN endpoint** task.
+- This is the command to run to purge the CDN endpoint: 
+`az cdn endpoint purge --content-paths  "/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP"`
+- The `--profile name` argument is the actual name of the CDN profile resource.
+- The `--name` argument is the name of the endpoint, as it appears in the hostname *mywebsite.azureedge.net*.
+- When you add an endpoint to your CDN profile, a new resource is created with a long name. This is not the name we should use for our command.

@@ -32,8 +32,13 @@ For the website, I used [this free template](https://startbootstrap.com/theme/re
 
 ### Storage Account
 
+- Tutorial: [Host a static website on Blob Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-host)
 - From the Azure Portal, I created a new storage account.
 - In the newly created storage account, under Settings, I clicked on the **Static website** option.
+
+### Enable HTTPS and custom domain
+
+- Tutorial: [Map a custom domain with HTTPS enabled](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-custom-domain-name?tabs=azure-portal#map-a-custom-domain-with-https-enabled)
 
 ### Set up GitHub Action
 

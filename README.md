@@ -12,13 +12,13 @@ The deadline for this challenge is **May 31st**.
 
 There are 7 steps to this challenge:
 
-1. [x] Create a GitHub repo.
-2. [x] Use HTML and CSS to build the website and store the code in the repo.
-3. [  ] Add a visitor count to the website.
-4. [x] Deploy the website to Azure Blob Storage.
-5. [x] Enable HTTPS and custom domain support.
-6. [  ] Set up GitHub Actions.
-7. [  ] Write a blog post.
+[x] Create a GitHub repo.
+[x] Use HTML and CSS to build the website and store the code in the repo.
+[  ] Add a visitor count to the website.
+[x] Deploy the website to Azure Blob Storage.
+[x] Enable HTTPS and custom domain support.
+[  ] Set up GitHub Actions.
+[  ] Write a blog post.
 
 ## My Progress
 

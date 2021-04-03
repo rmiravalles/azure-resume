@@ -26,7 +26,7 @@ jobs:
         with:
           azcliversion: 2.0.72
           inlineScript: |
-           az cdn endpoint purge --content-paths  "/*" --profile-name "mywebresume" --name "mywebresume (mywebresume/mywebresume)" --resource-group "myresumerg"
+           az cdn endpoint purge --content-paths  "/*" --profile-name mywebresume --name "mywebresume (mywebresume/mywebresume)" --resource-group "myresumerg"
       
       - name: logout
         run: |

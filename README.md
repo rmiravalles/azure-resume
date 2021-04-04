@@ -42,6 +42,10 @@ For the website, I used [this free template](https://startbootstrap.com/theme/re
 ### Set up GitHub Action
 
 - Tutorial: [Use GitHub Actions to deploy your static website to Azure storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-github-actions)
+- This workflow is compromised of 4 tasks:
+  - [Checkout](https://github.com/actions/checkout): this will checkout our code, so the workflow can access it.
+  - [Azure Login](https://github.com/marketplace/actions/azure-login): this will perform a login to Azure, so we can run commands. This is the `az login` command.
+  - [Azure CLI](https://github.com/marketplace/actions/azure-cli-action): this allows us to automate our workflow by executing Azure CLI commands. We'll use this task twice; first to upload our content to the blob storage and after that to purge the CDN endpoint.
 - I encountered an issue with the **Purge CDN endpoint** task.
 - This is the command to run to purge the CDN endpoint: 
 `az cdn endpoint purge --content-paths  "/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP"`

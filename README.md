@@ -52,3 +52,7 @@ For the website, I used [this free template](https://startbootstrap.com/theme/re
 - The `--profile name` argument is the actual name of the CDN profile resource.
 - The `--name` argument is the name of the endpoint, as it appears in the hostname *mywebsite.azureedge.net*.
 - When you add an endpoint to your CDN profile, a new resource is created with a long name. This is not the name we should use for our command.
+
+### The visitor counter
+
+- [An easy to use visitor counter](https://hits.seeyoufarm.com/)

@@ -2,6 +2,13 @@
   "scriptFile": "__init__.py",
   "bindings": [
     {
+      "name": "messageJSON",
+      "type": "table",
+      "tableName": "webresumevisitors",
+      "connection": "mywebresume_STORAGE",
+      "direction": "in"
+    },
+    {
       "authLevel": "anonymous",
       "type": "httpTrigger",
       "direction": "in",
@@ -15,6 +22,21 @@
       "type": "http",
       "direction": "out",
       "name": "$return"
+    },
+    {
+      "type": "table",
+      "direction": "in",
+      "name": "visitorcount",
+      "tableName": "webresumevisitors",
+      "take": "100",
+      "connection": "mywebresume_STORAGE"
+    },
+    {
+      "type": "table",
+      "direction": "out",
+      "name": "visitorsoutput",
+      "tableName": "webresumevisitors",
+      "connection": "mywebresume_STORAGE"
     }
   ]
 }

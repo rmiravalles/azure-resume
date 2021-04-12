@@ -56,3 +56,11 @@ For the website, I used [this free template](https://startbootstrap.com/theme/re
 ### The visitor counter
 
 - [An easy to use visitor counter](https://hits.seeyoufarm.com/)
+
+### The Azure Function
+
+- I decided to use Python to write my function.
+- I'll bind it to a table storage.
+- [Azure Table storage input bindings for Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-table-input?tabs=python).
+- [Azure Table storage output bindings for Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-table-output?tabs=python).
+- I added the URL of my resume to CORS.

@@ -5,38 +5,35 @@
       "name": "messageJSON",
       "type": "table",
       "tableName": "webresumevisitors",
-      "connection": "mywebresume_STORAGE",
+      "partitionKey": "message",
+      "rowKey": "{id}",
+      "connection": "AzureWebJobsStorage",
       "direction": "in"
     },
     {
-      "authLevel": "anonymous",
+      "name": "message",
+      "type": "table",
+      "tableName": "webresumevisitors",
+      "partitionKey": "message",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
+    },
+    {
+      "authLevel": "function",
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
       "methods": [
         "get",
         "post"
-      ]
+      ],
+      "route": "messages/{id}"
     },
     {
       "type": "http",
       "direction": "out",
       "name": "$return"
-    },
-    {
-      "type": "table",
-      "direction": "in",
-      "name": "visitorcount",
-      "tableName": "webresumevisitors",
-      "take": "100",
-      "connection": "mywebresume_STORAGE"
-    },
-    {
-      "type": "table",
-      "direction": "out",
-      "name": "visitorsoutput",
-      "tableName": "webresumevisitors",
-      "connection": "mywebresume_STORAGE"
     }
-  ]
+  ],
+  "disabled": false
 }

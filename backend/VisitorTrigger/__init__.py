@@ -1,25 +1,20 @@
 import logging
-
+import uuid
 import json
 
 import azure.functions as func
 
-def main(req: func.HttpRequest, messageJSON) -> func.HttpResponse:
+def main(req: func.HttpRequest, messageJSON, message: func.Out[str]) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
-    name = req.params.get('name')
-    if not name:
-        try:
-            req_body = req.get_json()
-        except ValueError:
-            pass
-        else:
-            name = req_body.get('name')
-
-    if name:
-        return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
+    counter = messageJSON[0]['usersCounter'] + 1
+    messageJSON[0]['usersCounter'] = counter
+    test = messageJSON[0].to_json()
+    message.set(func.Document.from_json(messageJSON[0].to_json()))
+    if counter:
+        return func.HttpResponse(f"{counter}", status_code=200)
     else:
         return func.HttpResponse(
-             "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
-             status_code=200
+             "Error",
+             status_code=500
         )

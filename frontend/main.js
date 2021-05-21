@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
-const functionApi = 'https://visitorshttptriggerfunction.azurewebsites.net/api/VisitorTrigger'; 
+const functionApi = 'http://localhost:7071/api/getcounter'; 
 
 const getVisitCount = () => {
     let count = 30;

@@ -6,7 +6,8 @@ from azure.cosmos import exceptions, CosmosClient, PartitionKey
 def main(req: func.HttpRequest, inputDoc: func.DocumentList, outputDoc: func.Out[func.Document]) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
-    counter = (int((inputDoc[0]['id'])) + 1)
+    counter = getNewCounterValue(inputDoc[0]['count'])
+    inputDoc[0]['count'] = counter
     outputDoc.set(func.Document.from_json(inputDoc[0].to_json()))
     if counter:
         return func.HttpResponse(f"{counter}", status_code=200)
@@ -14,3 +15,6 @@ def main(req: func.HttpRequest, inputDoc: func.DocumentList, outputDoc: func.Out
         return func.HttpResponse(
              "Error",
              status_code=500)
+
+def getNewCounterValue(value: int):
+    return value + 1

@@ -8,7 +8,7 @@
 			"isBackground": true,
 			"dependsOn": "pipInstall",
 			"options": {
-				"cwd": "${workspaceFolder}/backend"
+				"cwd": "${workspaceFolder}/backend\\api"
 			}
 		},
 		{
@@ -25,7 +25,7 @@
 			},
 			"problemMatcher": [],
 			"options": {
-				"cwd": "${workspaceFolder}/backend"
+				"cwd": "${workspaceFolder}/backend\\api"
 			}
 		}
 	]

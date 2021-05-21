@@ -1,0 +1,41 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "inputDoc",
+      "databaseName": "webresume",
+      "collectionName": "counter",
+      "connectionStringSetting": "ConnectionString",
+      "partitionKey": "1",
+      "id": "1"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "outputDoc",
+      "databaseName": "webresume",
+      "collectionName": "counter",
+      "createIfNotExists": "true",
+      "connectionStringSetting": "ConnectionString",
+      "partitionKey": "1",
+      "id": "1"
+    }
+  ]
+}

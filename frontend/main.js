@@ -1,3 +1,4 @@
+// This is the script that will fetch and display the counter.
 // window.addEventListener('DOMContentLoaded', (event) => {
 //     getVisitCount();
 // });
@@ -13,7 +14,7 @@ const getVisitCount = () => {
     })
     .then(response => {
         console.log("Website called function API.",response);
-        count = response.count;
+        count = response;
         document.getElementById('counter').innerText = count;
     }).catch(function(error) {
         console.log(error);

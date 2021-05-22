@@ -4,7 +4,7 @@
 // });
 
 
-const functionApi = 'https://resumecounter.azurewebsites.net/api/GetCounter?code=jYxRGLQ35qTrNqBdK5nk3xhlspiQYhiO7Arfl4K4r0M7Qa4HfVhQxw=='; 
+const functionApi = 'https://visitorcounter.azurewebsites.net/api/GetCounter?code=4mYCr1McGHA4t0ls8MjUCvJ8svXjJvZoaiOuwzJzTssIsHIA1jUbvw=='; 
 
 const getVisitCount = () => {
     let count = 30;

@@ -22,7 +22,6 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     environment: dev
-    runs-on: ubuntu-18.04
     steps:
     - name: 'Checkout GitHub Action'
       uses: actions/checkout@master
@@ -46,7 +45,7 @@ jobs:
         pip install pytest
         pytest --target=".python_packages/lib/site-packages"
         popd
-        
+
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
       id: fa

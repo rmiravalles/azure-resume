@@ -43,7 +43,7 @@ jobs:
       run: |
         pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
         pip install pytest
-        pytest --target=".python_packages/lib/site-packages"
+        pytest tests
         popd
 
     - name: 'Run Azure Functions Action'

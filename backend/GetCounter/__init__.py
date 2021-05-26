@@ -18,6 +18,5 @@ def main(req: func.HttpRequest, inputDoc: func.DocumentList,
             "Error",
             status_code=500)
 
-
 def getNewCounterValue(value: int):
     return value + 1

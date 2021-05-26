@@ -1,5 +1,5 @@
 import logging
-# import azure libraries
+# importing azure libraries
 import azure.functions as func
 from azure.cosmos import exceptions, CosmosClient, PartitionKey
 

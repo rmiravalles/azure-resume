@@ -2,7 +2,7 @@ import unittest
 
 import azure.functions as func
 
-from ...backend.GetCounter import getNewCounterValue
+from GetCounter import getNewCounterValue
 
 class TestCounter(unittest.TestCase):
     def test_counter(self):

@@ -4,6 +4,5 @@
 
 azure-functions
 azure.cosmos
-azure-core
 pytest
 flake8

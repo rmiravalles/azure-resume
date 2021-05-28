@@ -1,5 +1,6 @@
 import unittest
 
+import pytest
 import azure.functions as func
 
 from GetCounter import getNewCounterValue

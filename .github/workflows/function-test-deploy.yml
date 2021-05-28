@@ -15,7 +15,7 @@ on:
 # 2. Change these variables for your configuration:
 env:
   AZURE_FUNCTIONAPP_NAME: visitorcounter # set this to your application's name
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: './backend'   # set this to the path to your web app project, defaults to the repository root
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'backend'   # set this to the path to your web app project, defaults to the repository root
   PYTHON_VERSION: '3.8'                 # set this to the python version to use (supports 3.6, 3.7, 3.8)
 
 jobs:
@@ -39,11 +39,19 @@ jobs:
         pip install -r requirements.txt
         popd
     
+    - name: Lint with flake8
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    
     - name: Test with pytest
       run: |
         pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+        mkdir testresults
         pip install pytest
-        pytest tests/test_GetCounter.py --junitxml=test-results.xml
+        pytest tests/test_GetCounter.py --junitxml='${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/testresults/test-results.xml'
         popd
     
     - name: Publish Unit Test Results
@@ -56,7 +64,7 @@ jobs:
       id: fa
       with:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
-        package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+        package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/GetCounter'
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
 
 # For more samples to get started with GitHub Action workflows to deploy to Azure, refer to https://github.com/Azure/actions-workflow-samples

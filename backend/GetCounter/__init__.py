@@ -3,8 +3,7 @@ import logging
 import azure.functions as func
 from azure.cosmos import exceptions, CosmosClient, PartitionKey
 
-def main(req: func.HttpRequest, inputDoc: func.DocumentList,
-         outputDoc: func.Out[func.Document]) -> func.HttpResponse:
+def main(req: func.HttpRequest, inputDoc: func.DocumentList, outputDoc: func.Out[func.Document]) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
     counter = getNewCounterValue(inputDoc[0]['count'])

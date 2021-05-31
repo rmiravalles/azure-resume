@@ -5,5 +5,8 @@
     "azureFunctions.projectLanguage": "Python",
     "azureFunctions.projectRuntime": "~3",
     "debug.internalConsoleOptions": "neverOpen",
-    "python.pythonPath": "C:\\Users\\rmira\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"
+    "python.pythonPath": "C:\\Users\\rmira\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "cSpell.ignoreWords": [
+        "creds"
+    ]
 }
